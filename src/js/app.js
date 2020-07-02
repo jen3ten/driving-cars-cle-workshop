@@ -9,6 +9,12 @@ let intervalId = null;
 
 const car = new Car();
 
+(function(){
+    setupAcceleratorButton();
+    setupBrakeButton();
+    console.log("IIFE has setup the buttons")
+})();
+
 const updateSpeedometer = function(){
     speedometerElement.innerText = car.getSpeed();
 }
