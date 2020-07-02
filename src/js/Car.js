@@ -7,6 +7,10 @@ class Car {
         this.speed += 10;
     }
 
+    isDriving(){
+        return this.speed > 0;
+    }
+
     isSpeeding(){
         return this.speed > 70;
     }

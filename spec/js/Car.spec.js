@@ -46,5 +46,16 @@ describe('Car should behave like a car:', function(){
         })
     })
 
+    describe('Car should have an odometer:', function(){
+
+        describe('when speed is greater than 0', function(){
+
+            it('isDriving should return true', function(){
+                underTest.accelerate();
+                expect(underTest.isDriving()).toBe(true);
+            })
+        })
+    })
+
 
 })
