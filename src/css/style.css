@@ -1,8 +1,12 @@
 .hidden {
-    display:none;
+    visibility: hidden;
 }
 
 .warning {
     color:red;
     font-weight:bold;
+}
+
+button{
+    margin: 2em 0em;
 }
