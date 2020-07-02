@@ -5,7 +5,6 @@ class Car {
     }
     
     getSpeed() {
-        console.log(this.speed);
         return this.speed;
     }
 
@@ -27,7 +26,6 @@ class Car {
 
     addMile() {
         this.distanceTravelled += 1;
-        console.log(this.distanceTravelled);
     }
 
     brake() {

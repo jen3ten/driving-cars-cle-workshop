@@ -4,6 +4,8 @@ const warningElement = document.querySelector('.dashboard__warning');
 const acceleratorElement = document.querySelector('.floorboard__accelerator');
 const brakeElement = document.querySelector('.floorboard__brake');
 
+let isOdometerActive = false;
+
 const car = new Car();
 
 const updateSpeedometer = function(){
@@ -23,13 +25,16 @@ const warnIfSpeeding = function(){
     }
 }
 
+let t = null;
+
 const addMilesIfDriving = function(){
-    if(car.isDriving()){
+    if(car.isDriving() && !isOdometerActive){
         odometerActive();
     }
-    else{
-        console.log(odometerActive())
-        clearInterval(odometerActive());
+    else if(!car.isDriving() && isOdometerActive){
+        console.log(`clearing t=${t}`)
+        clearInterval(t);
+        isOdometerActive = false;
     }
 }
  
@@ -37,8 +42,8 @@ const odometerActive = function(){
     t = setInterval(function(){
         car.addMile();
         updateOdometer();
+        isOdometerActive = true;
     }, 1000);
-    return t;
 }
 
 const setupAcceleratorButton = function(){
