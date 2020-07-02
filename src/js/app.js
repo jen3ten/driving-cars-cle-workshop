@@ -5,6 +5,7 @@ const acceleratorElement = document.querySelector('.floorboard__accelerator');
 const brakeElement = document.querySelector('.floorboard__brake');
 
 let isOdometerActive = false;
+let intervalId = null;
 
 const car = new Car();
 
@@ -25,15 +26,13 @@ const warnIfSpeeding = function(){
     }
 }
 
-let t = null;
-
 const addMilesIfDriving = function(){
     if(car.isDriving() && !isOdometerActive){
         odometerActive();
     }
     else if(!car.isDriving() && isOdometerActive){
-        console.log(`clearing t=${t}`)
-        clearInterval(t);
+        console.log(`clearing t=${intervalId}`)
+        clearInterval(intervalId);
         isOdometerActive = false;
     }
 }

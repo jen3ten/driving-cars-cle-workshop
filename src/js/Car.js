@@ -12,10 +12,6 @@ class Car {
         return this.distanceTravelled;
     }
 
-    accelerate() {
-        this.speed += 10;
-    }
-
     isDriving() {
         return this.speed > 0;
     }
@@ -24,15 +20,18 @@ class Car {
         return this.speed > 70;
     }
 
-    addMile() {
-        this.distanceTravelled += 1;
+    accelerate() {
+        this.speed += 10;
     }
-
+    
     brake() {
         this.speed -= 7;
         if(this.speed < 0){
             this.speed = 0;
         }
     }
-
+    
+    addMile() {
+        this.distanceTravelled += 1;
+    }
 }
