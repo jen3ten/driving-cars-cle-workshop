@@ -54,6 +54,11 @@ describe('Car should behave like a car:', function(){
                 underTest.accelerate();
                 expect(underTest.isDriving()).toBe(true);
             })
+
+            it('addMile should increase distanceTravelled by 1', function(){
+                underTest.addMile();
+                expect(underTest.getDistanceTravelled()).toBe(1);
+            })
         })
     })
 
