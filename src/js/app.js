@@ -24,12 +24,22 @@ const warnIfSpeeding = function(){
 }
 
 const addMilesIfDriving = function(){
-    car.addMile()
-    updateOdometer();
+    if(car.isDriving()){
+        odometerActive();
+    }
+    else{
+        console.log(odometerActive())
+        clearInterval(odometerActive());
+    }
 }
-
-let odometerActive = setInterval(addMilesIfDriving, 1000);
-let odometerInactive = clearInterval(odometerActive);
+ 
+const odometerActive = function(){
+    t = setInterval(function(){
+        car.addMile();
+        updateOdometer();
+    }, 1000);
+    return t;
+}
 
 const setupAcceleratorButton = function(){
     acceleratorElement.addEventListener('click', ()=>{
