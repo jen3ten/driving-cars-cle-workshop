@@ -13,6 +13,18 @@ describe('Car should behave like a car:', function(){
                 underTest.accelerate();
                 expect(underTest.getSpeed()).toBe(10);
             })
+
+            it('isSpeeding should return true if speed greater than 70 mph', function(){
+                for(let i=0; i<10; i++){
+                    underTest.accelerate();
+                }
+                expect(underTest.isSpeeding()).toBe(true);
+            })
+
+            it('isSpeeding should return false if speed is less than 70 mph', function(){
+                underTest.accelerate();
+                expect(underTest.isSpeeding()).toBe(false);
+            })
         })
 
     })

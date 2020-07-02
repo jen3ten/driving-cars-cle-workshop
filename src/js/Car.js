@@ -7,9 +7,12 @@ class Car {
         this.speed += 10;
     }
 
+    isSpeeding(){
+        return this.speed > 70;
+    }
+
     brake(){
         this.speed -= 7;
-        console.log(this.speed);
         if(this.speed < 0){
             this.speed = 0;
         }
