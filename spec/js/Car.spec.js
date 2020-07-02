@@ -26,6 +26,11 @@ describe('Car should behave like a car:', function(){
                 underTest.brake();      // Reduce speed by 7 mph
                 expect(underTest.getSpeed()).toBe(3);
             })
+
+            it('car cannot go below speed of 0', function(){
+                underTest.brake();
+                expect(underTest.getSpeed()).toBe(0);
+            })
         })
     })
 

@@ -9,6 +9,10 @@ class Car {
 
     brake(){
         this.speed -= 7;
+        console.log(this.speed);
+        if(this.speed < 0){
+            this.speed = 0;
+        }
     }
 
     getSpeed() {
